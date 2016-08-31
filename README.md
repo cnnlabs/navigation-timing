@@ -62,7 +62,3 @@ unloadEventStart: 1472492033019
 // DOMContentLoaded
 Page load time: 239ms
 ```
-
-## License
-
-Released under an MIT license.
