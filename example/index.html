@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Timing Test</title>
+        <script src="../dist/navigation-timing.js"></script>
+    </head>
+    <body>
+        <h1>Timing Test</h1>
+        <div id="output"></div>
+        <script>
+            function testMetrics() {
+                var data = getMetrics(),
+                    element = document.getElementById('output');
+
+                element.innerHTML = '<code>DOMContentLoaded: ' + JSON.stringify(data.complete) + 'ms</code>';
+            }
+            if (window.addEventListener) {
+                window.addEventListener('load', testMetrics);
+            } else {
+                window.attachEvent('onload', testMetrics);
+            }
+        </script>
+    </body>
+</head>
