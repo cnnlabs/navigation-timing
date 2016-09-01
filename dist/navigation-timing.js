@@ -5,7 +5,6 @@ function getDomContentLoaded(perf) {
 
     if (window.debug) {
         console.log(document.readyState);
-        console.log(perf);
         console.log('Page load time: ' + complete + 'ms');
     }
 
@@ -24,6 +23,8 @@ function postMetrics(metrics) {
 function getMetrics() {
     var now = new Date(),
         metrics = {
+            complete: '',
+            navigator: (window.navigator ? window.navigator : {}),
             timing: {
                 performance: ((window.performance && window.performance.timing) ? window.performance.timing : {}),
                 location: {
@@ -39,15 +40,18 @@ function getMetrics() {
                     ts: now.getTime()
                 }
             },
-            complete: ''
+            dimensions: {
+                width: (window.innerWidth ? window.innerWidth : 0),
+                height: (window.innerHeight ? window.innerHeight : 0)
+            }
         },
         debug = (window.location.search.indexOf('debug=true') > -1) || false;
 
     window.debug = debug;
 
     if (window.debug) {
-        console.log('Performance timing:');
-        console.log(metrics.timing);
+        console.log('Performance metrics:');
+        console.log(metrics);
     }
 
     metrics.complete = getDomContentLoaded(metrics.timing.performance);
