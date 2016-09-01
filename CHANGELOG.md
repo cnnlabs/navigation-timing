@@ -1,5 +1,22 @@
 # Navigation Timing
 
+## 2016-09-01, Version 0.2.0, @adslaton
+
+### Notable changes
+
+- adding details about the agent such as height, width, and navigator data
+
+### Known issues
+
+See https://github.com/cnnlabs/navigation-timing/labels/defect for complete and
+current list of known issues.
+
+### Commits
+
+* [[`69b60ce493`](https://github.com/nodejs/node/commit/69b60ce493)] - Merge pull request #2 from cnnlabs/feature/user-details (A.D. Slaton)
+* [[`4d66a57d30`](https://github.com/nodejs/node/commit/4d66a57d30)] - adding details about the agent such as height, width, and navigator data (A.D. Slaton)
+
+
 ## 2016-08-30, Version 0.1.1, @adslaton
 
 ### Notable changes
