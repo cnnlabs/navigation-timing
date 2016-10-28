@@ -99,7 +99,7 @@ window.NTAPI = window.NTAPI || {};
 
         if (metrics.type && window.NTAPI.PostUrl) {
             var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-            xmlhttp.open('POST', window.timingPostUrl);
+            xmlhttp.open('POST', window.NTAPI.PostUrl);
             xmlhttp.setRequestHeader('Content-Type', 'application/json');
             xmlhttp.send(JSON.stringify(metrics));
         } else if (window.debug) {
