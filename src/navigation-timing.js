@@ -133,7 +133,5 @@ window.NTAPI = window.NTAPI || {};
         window.attachEvent('onload', postMetricsOnLoad);
     }
 
-    window.NTAPI = {
-        postMetrics: postMetrics
-    };
+    window.NTAPI.postMetrics = postMetrics;
 })();
