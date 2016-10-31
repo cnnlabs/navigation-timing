@@ -1,5 +1,23 @@
 # Navigation Timing
 
+## 2016-10-31, Version 0.3.0, @crawls-turner
+
+### Notable changes
+
+- Gives us the ability to call the postMetrics function "externally" and appends a base set of metric values to every API call.
+
+### Known issues
+
+See https://github.com/cnnlabs/navigation-timing/labels/defect for complete and
+current list of known issues.
+
+### Commits
+
+* [[`1ed688d86b`](https://github.com/git@github.com:cnnlabs/navigation-timing/commit/1ed688d86b)] - Adding line breaks (Charles Rawls)
+* [[`1704de2b71`](https://github.com/git@github.com:cnnlabs/navigation-timing/commit/1704de2b71)] - Fixing post url (Charles Rawls)
+* [[`a37cd0452b`](https://github.com/git@github.com:cnnlabs/navigation-timing/commit/a37cd0452b)] - Updating for External API calls (Charles Rawls)
+
+
 ## 2016-09-01, Version 0.2.0, @adslaton
 
 ### Notable changes
