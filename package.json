@@ -1,0 +1,29 @@
+{
+  "name": "navigation-timing",
+  "version": "0.3.0",
+  "description": "A client timing module that passes Navigation Timing",
+  "scripts": {
+    "build": "gulp build",
+    "generate-changelog": "changelog-maker --group",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cnnlabs/navigation-timing.git"
+  },
+  "homepage": "https://github.com/cnnlabs/navigation-timing",
+  "devDependencies": {
+    "changelog-maker": "2.2.3",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.3.2",
+    "gulp-eslint": "3.0.1",
+    "gulp-jscs": "4.0.0",
+    "gulp-minify": "0.0.14",
+    "gulp-util": "3.0.7"
+  },
+  "keywords": [
+    "cnn",
+    "cnnlabs"
+  ],
+  "license": "MIT"
+}
