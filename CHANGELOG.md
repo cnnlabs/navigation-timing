@@ -1,5 +1,21 @@
 # Navigation Timing
 
+## 2016-10-31, Version 0.3.1, @crawls-turner
+
+### Notable changes
+
+- Correctly sets NTAPI postMetrics function.
+
+### Known issues
+
+See https://github.com/cnnlabs/navigation-timing/labels/defect for complete and
+current list of known issues.
+
+### Commits
+
+* [[`3f04b1ff1d`](https://github.com/git@github.com:cnnlabs/navigation-timing/commit/3f04b1ff1d)] - Fixing override of object (Charles Rawls)
+
+
 ## 2016-10-31, Version 0.3.0, @crawls-turner
 
 ### Notable changes
