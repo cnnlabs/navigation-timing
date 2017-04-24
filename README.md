@@ -23,9 +23,16 @@ Gathers `window.performance.timing` data after the `window.onload` event fires.
 To set debug pass the query string value `?debug=true`. This will allow logs
 to be shown in the browser console.
 
-### POST data to an endpoint
+### POST data to an endpoint (Segment.com)
 
 To save data for historical purposes, set the property `window.timingPostUrl = <host>`
+
+### Setup for Segment.com:
+
+- 0.) Endpoints should now be created via Segment.com (https://segment.com) integration applications and you should be given access to a Segment.com account via our Turner account to get started: (contact: Prabhu.Duraisamy@turner.com or AD.Slaton@turner.com)
+- 1.) lazy load or application initialize your Segment.com client SDK into your application
+- 2.) Be sure that you've got module or global access to the two following variables: performanceMetricsArr (to hold metrics under lazy loading is complete) and analytics (for Segment.com)
+- 3.) log your metrics as they come through and test the metrics are coming through the debugger in Segment.com dashboard
 
 ### Example
 

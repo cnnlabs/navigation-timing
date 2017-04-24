@@ -97,14 +97,24 @@ window.NTAPI = window.NTAPI || {};
             console.log(metrics);
         }
 
-        if (metrics.type && window.NTAPI.PostUrl) {
-            var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-            xmlhttp.open('POST', window.NTAPI.PostUrl);
-            xmlhttp.setRequestHeader('Content-Type', 'application/json');
-            xmlhttp.send(JSON.stringify(metrics));
-        } else if (window.debug) {
-            console.log('Navigation Timing Settings Definition Error. Metrics Type:', metrics.type, 'PostUrl:', window.NTAPI.PostUrl);
+        // NOTE: analytics -> {} & performanceMetricsArr -> [] are both initialized global's that should be setup via your client application; their purpose is to interface with Segment.com's analytics.js file that's loaded in on the client app
+        if (Object.keys(analytics).length === 0 && typeof performanceMetricsArr === 'object') {
+            // if Segment's analytics.js file is not async loaded into the application yet:
+            performanceMetricsArr.push(metrics);
+        } else {
+            // do this when Segment's analytics.js file is loaded into the application:
+            jQuery(document).trigger('onSegmentUpload', [metrics]); // upload each event as it occurs to Segment.com
         }
+
+        // NOTE: leaving this here as a reference
+        // if (metrics.type && window.NTAPI.PostUrl) {
+        //     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+        //     xmlhttp.open('POST', window.NTAPI.PostUrl);
+        //     xmlhttp.setRequestHeader('Content-Type', 'application/json');
+        //     xmlhttp.send(JSON.stringify(metrics));
+        // } else if (window.debug) {
+        //     console.log('Navigation Timing Settings Definition Error. Metrics Type:', metrics.type, 'PostUrl:', window.NTAPI.PostUrl);
+        // }
     }
 
     /* get the metrics we have after page load */
