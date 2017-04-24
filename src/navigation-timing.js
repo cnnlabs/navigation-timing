@@ -104,7 +104,7 @@ window.NTAPI = window.NTAPI || {};
                 performanceMetricsArr.push(metrics);
             } else {
                 // do this when Segment's analytics.js file is loaded into the application:
-                jQuery(document).trigger('onSegmentUpload', [metrics]); // upload each event as it occurs to Segment.com
+                jQuery(document).trigger('onMetricsUpload', [metrics]); // upload each event as it occurs to Segment.com
             }
         } else {
             console.log('analytics and performanceMetricsArr global variables must be defined within your client application');
