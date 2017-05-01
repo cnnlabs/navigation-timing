@@ -1,6 +1,7 @@
 /* jshint browser: true, node: false */
 
 window.NTAPI = window.NTAPI || {};
+window.NTAPI.metricsArray = window.NTAPI.metricsArray || [];
 
 (function () {
     'use strict';
@@ -98,10 +99,10 @@ window.NTAPI = window.NTAPI || {};
         }
 
         // NOTE: analytics -> {} & performanceMetricsArr -> [] are both initialized global's that should be setup via your client application; their purpose is to interface with Segment.com's analytics.js file that's loaded in on the client app
-        if (analytics && performanceMetricsArr) {
-            if (Object.keys(analytics).length === 0 && typeof performanceMetricsArr === 'object') {
+        if (analytics && window.NTAPI.metricsArray) {
+            if (Object.keys(analytics).length === 0 && typeof window.NTAPI.metricsArray === 'object') {
                 // if Segment's analytics.js file is not async loaded into the application yet:
-                performanceMetricsArr.push(metrics);
+                window.NTAPI.metricsArray.push(metrics);
             } else {
                 // do this when Segment's analytics.js file is loaded into the application:
                 jQuery(document).trigger('onMetricsUpload', [metrics]); // upload each event as it occurs to Segment.com
