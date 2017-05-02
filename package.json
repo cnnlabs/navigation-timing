@@ -1,6 +1,6 @@
 {
   "name": "navigation-timing",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A client timing module that passes Navigation Timing",
   "scripts": {
     "build": "gulp build",
