@@ -108,7 +108,7 @@ window.NTAPI.metricsArray = window.NTAPI.metricsArray || [];
                 jQuery(document).trigger('onMetricsUpload', [metrics]); // upload each event as it occurs to Segment.com
             }
         } else {
-            console.log('analytics and performanceMetricsArr global variables must be defined within your client application');
+            console.log('analytics and window.NTAPI.metricsArray global variables must be defined within your client application');
         }
 
         // NOTE: leaving this here as a reference
