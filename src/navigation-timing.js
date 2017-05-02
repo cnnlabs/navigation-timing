@@ -1,3 +1,4 @@
+/* global jQuery, analytics */
 /* jshint browser: true, node: false */
 
 window.NTAPI = window.NTAPI || {};
